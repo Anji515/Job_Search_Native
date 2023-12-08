@@ -13,7 +13,7 @@ import {
 const Home = () => {
   const router = useRouter();
   const CustomHeaderLeft = () => <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />;
-  const CustomHeaderRight = () => <ScreenHeaderBtn iconUrl={icons.profile} dimension="100%" />;
+  const CustomHeaderRight = () => <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />;
 
 
   return (
@@ -31,8 +31,8 @@ const Home = () => {
       />
 
      <Welcome />
-     <Nearbyjobs/>
      <Popularjobs/>
+     <Nearbyjobs/>
     </SafeAreaView>
   );
 };
