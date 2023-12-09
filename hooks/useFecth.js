@@ -1,16 +1,17 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 
 export const useFetch=async(endpoint,query)=>{
 
     const [data,setData]=useState([]);
     const [loading,setLoading]=useState(false);
-    const [error,setError]=useState('');
+    const [error,setError]=useState(null);
 
     const options = {
         method: 'GET',
         url: `https://jsearch.p.rapidapi.com/${endpoint}`,
         params: {
-          query: 'Python developer in Texas, USA',
+          query: 'React developer',
           page: '1',
           num_pages: '1'
         },
@@ -25,8 +26,8 @@ export const useFetch=async(endpoint,query)=>{
         setLoading(true);
         try {
             const response = await axios.request(options);
-            console.log(response.data);
-            setData(response.data);
+            console.log('Final hook',response.data);
+            setData(response.data.data);
             setLoading(false);
         } catch (error) {
             console.error(error);
@@ -46,5 +47,5 @@ export const useFetch=async(endpoint,query)=>{
         fetchData()
       }      
     
-      return {data,loading,error,refetch}
+      return { data,loading,error,refetch }
 }
