@@ -17,11 +17,12 @@ const Home = () => {
 
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite, padding:'15px' }}>
       <Stack.Screen
         options={{
             headerStyle: {
               backgroundColor: COLORS.lightWhite,
+              padding:'10px'
             },
             headerLeft: CustomHeaderLeft,
             headerRight: CustomHeaderRight,
