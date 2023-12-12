@@ -19,12 +19,12 @@ const Nearbyjobs = () => {
     refetch();
   }, []);
 
-  console.log("Nearbyjobs", data);
+  // console.log("Nearbyjobs", data);
 
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Popularjobs</Text>
+        <Text style={styles.headerTitle}>Nearby jobs</Text>
         <TouchableOpacity>
           <Text style={styles.headerBtn}>Show all</Text>
         </TouchableOpacity>
@@ -37,7 +37,11 @@ const Nearbyjobs = () => {
           <Text>Something went wrong!</Text>
         ) : (
           data?.map((job) => (
-            <NearbyJobCard key={`nearby-job-${job?.job_id}`} job={job} />
+            <NearbyJobCard 
+            key={`nearby-job-${job?.job_id}`} 
+            job={job} 
+            handleNavigate={() => router.push(`/job-details/${job.job_id}`)}
+            />
           ))
         )}
       </View>

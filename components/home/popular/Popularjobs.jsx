@@ -22,7 +22,7 @@ const Popularjobs = () => {
     refetch();
   }, []);
 
-  console.log('Popular jobs',data.data);
+  // console.log('Popular-jobs',data);
 
   const [selectedJob, setSelectedJob] = useState('');
 

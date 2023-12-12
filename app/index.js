@@ -1,8 +1,7 @@
 import { Stack, useRouter } from "expo-router";
-import { useState } from "react";
-import { SafeAreaView, ScrollView, Text, View } from "react-native";
+import { SafeAreaView} from "react-native";
 
-import { COLORS, icons, images, SIZES } from "../constants";
+import { COLORS, icons, images} from "../constants";
 import {
   Nearbyjobs,
   Popularjobs,
