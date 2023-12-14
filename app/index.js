@@ -8,11 +8,13 @@ import {
   ScreenHeaderBtn,
   Welcome,
 } from "../components";
+import { useState } from "react";
 
 const Home = () => {
   const router = useRouter();
   const CustomHeaderLeft = () => <ScreenHeaderBtn iconUrl={icons.menu} dimension="60%" />;
   const CustomHeaderRight = () => <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />;
+  const [search,setSearch] =useState('')
 
 
   return (
@@ -30,7 +32,15 @@ const Home = () => {
         }}
       />
 
-     <Welcome />
+     <Welcome 
+     search={search}
+     setSearch={setSearch}
+     handleClick={()=>{
+      if(search){
+        router.push(`/search/${search}`)
+      }
+     }}
+     />
      <Popularjobs/>
      <Nearbyjobs/>
     </SafeAreaView>
